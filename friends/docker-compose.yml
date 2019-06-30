@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10.3
+    restart: always
+    ports:
+      - '15432:5432'
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: friends_repo
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres: ~
+
